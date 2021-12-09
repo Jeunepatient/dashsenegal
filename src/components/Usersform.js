@@ -92,7 +92,7 @@ const Usersform = () => {
             }}
             options={
                 {
-                    actionsColumnIndex : -1, addRowPosition : 'first'
+                    actionsColumnIndex : -1, addRowPosition : 'first', filtering : true
                 }
             }
             />

@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "lastname": "Diallo",
+      "firstName": "Ibrahima Oury",
+      "email": "di84454@gmail.com",
+      "phone": "026 873 5903"
+    },
+    {
+      "id": 2,
+      "lastname": "Barry",
+      "firstName": "moussa",
+      "email": "di84454@gmail.com",
+      "phone": "624 82 50 00"
+    },
+    {
+      "id": 5,
+      "lastname": "Bah",
+      "firstName": "Idiatou",
+      "email": "di84454@gmail.com",
+      "phone": "624 82 50 00"
+    },
+    {
+      "firstName": "Adama hawa",
+      "email": "adam@gmail.com",
+      "lastname": "Baldé",
+      "phone": "875 657 96512",
+      "id": 6
+    },
+    {
+      "firstName": "ousmane ",
+      "email": "ousma@gmail.com",
+      "lastname": "Diallo",
+      "phone": "62475 698 788",
+      "id": 7
+    },
+    {
+      "firstName": "ousmane oury",
+      "email": "ousma@gmail.com",
+      "lastname": "Barry",
+      "phone": "62475 698 788",
+      "id": 8
+    },
+    {
+      "firstName": "Messi andré",
+      "email": "leomessi@gmail.com",
+      "lastname": "leonel",
+      "phone": "+1 854 122 3654 98",
+      "id": 9
+    }
+  ]
+}
