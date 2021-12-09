@@ -40,7 +40,7 @@ const [article, setarticle] = useState([
 
 // all the links
 const [link, setlink] = useState([
-    {id:1, hash : 'Home', font : 'fa fa-home',href:'home'},
+    {id:1, hash : 'Home', font : 'fa fa-home',href:''},
     {id:2, hash : 'Situation portière', font : 'fa fa-shopping-cart', href:'situation'},
     {id:3, hash : 'Cumul', font : 'fa fa-file-o', href:'accrued'},
     {id:4, hash : 'Suivis des marchandises', font :'fa fa-map-marker ', href:'invigilate'},
@@ -55,11 +55,19 @@ const [sublink, setsublink]=useState([
     {id : 5, link: 'Bureau', hash: 'office'},
 ])
 
+/**************map position coordinate************** */
+const [marker, usemark] = useState([
+    {id:1, name : 'conakry harbour', lng : '-15.24324', lat : '15.24548'},
+    {id:2, name : 'Dakar harbour', lng : '-13.34324', lat : '16.24548'},
+    {id:3, name : 'Accra harbour', lng : '-16.24324', lat : '14.24548'},
+    {id:4, name : 'China harbour', lng : '-10.24324', lat : '11.24548'},
+    {id:5, name : 'ottawa harbour', lat : 45.421255, lng : -75.9654}
+])
 
 
 
 return (
-    <Leftcontext.Provider value={{showsubparm, outputsubparm, islight, changetheme, light, dark, article, setarticle, link, setlink, sublink, setsublink}}>
+    <Leftcontext.Provider value={{showsubparm, outputsubparm, islight, changetheme, light, dark, article, setarticle, link, setlink, sublink, setsublink, marker, usemark}}>
         {props.children}
     </Leftcontext.Provider>
     )

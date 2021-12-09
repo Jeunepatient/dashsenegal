@@ -11,7 +11,7 @@ const Topright = () => {
                 <div  className={top.left}>
                     <div  style={{borderColor : theme.ui, backgroundColor :theme.bg}} className={top.search}>
                         <i className='fa fa-search'></i>
-                        <input style={{backgroundColor : theme.bg}} type='search' placeholder='search...' />
+                        <input style={{backgroundColor : theme.bg, color : theme.color}} type='search' placeholder='search...' />
                     </div>
                 </div>
                <Admintools />

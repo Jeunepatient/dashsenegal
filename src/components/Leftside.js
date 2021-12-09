@@ -5,7 +5,7 @@ import Subset from './Subset';
 import { useContext } from 'react';
 import { Leftcontext } from '../Context/Leftcontext';
 import { AuthContext } from '../Context/AuthContext';
-
+import logo from '../img/cmelogo.png'
 
 
 const Leftside = () => {
@@ -20,6 +20,7 @@ const Leftside = () => {
     return ( 
         <div style={{backgroundColor :theme.bg, color : theme.color , borderColor : theme.ui}} className={leftside.leftside}>
             <div  style={{backgroundColor :theme.bg, color : theme.color }} className={leftside.container}>
+                <img src={logo} alt='' width='100%' height='80px'/>
                 <div style={{fontFamily: 'magmawave caps'}} className={leftside.logomakeup}>
                     cma cgm
                 </div>
@@ -47,7 +48,7 @@ const Leftside = () => {
                     {
                         link.map(link => {
                             return (
-                                <Link  style={{backgroundColor :theme.bg, color : theme.color }}  key={link.id}  to={`/${link.href}`} > 
+                                <Link  style={{backgroundColor :theme.bg, color : theme.color }}  key={link.id}  to={link.id !==5 && `/${link.href}`} > 
                                 
                                 {link.id == 5 ? <li   onClick={() =>{ setactif(link.id); outputsubparm()}}  className={link.actif  && leftside.actif } > <i className={link.font}></i> {link.hash}<i className={arrow.arrowbottom}></i> </li> : <li   onClick={() => setactif(link.id)}  className={link.actif  && leftside.actif }  > <i className={link.font}></i> {link.hash}<i className={arrow.arrowleft}></i> </li> }
                                  </Link>

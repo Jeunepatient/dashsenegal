@@ -39,6 +39,7 @@
     height: 73px;
    
 }
+
 .img {
     background: url('../img/jeune.jpg') ;
     background-position: center center;
@@ -48,6 +49,7 @@
     border-radius: 50%;
     border: 2px solid #fff;
     line-height: 45px;
+ 
 }
 .logomakeup {
     font-size: 20px;
@@ -110,10 +112,12 @@ i {
     font-family: 'Poppins';
     line-height: 2.8rem;
     font-size: 16px;
+    transition: all .3s ease;
   }
   .showparams ul li.actif {
       margin-top: 3px;
     background-color: #e5e5ed;
+    background-color: #00bfff;;
     color : #222;
     
     padding : 8px;
@@ -121,6 +125,7 @@ i {
     line-height: 1.5rem;
     box-sizing: border-box;
     color: rgb(8, 71, 8);
-    
+    color : #fff;
     border-right: 3px solid rgb(12, 129, 12);
+    border-right: 3px solid rgb(51, 17, 161);;
   }
