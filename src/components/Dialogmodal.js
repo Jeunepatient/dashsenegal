@@ -27,11 +27,11 @@ export default function Dialogmodal({ open, handleClose, data, onChange, handleS
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         <form >
-                            <TextField id='firstName' value={firstName} onChange={e => onChange(e)} margin='dense' placeholder='enter your first name' label='first name' variant="outlined" fullWidth />
+                            {/* <TextField id='firstName' value={firstName} onChange={e => onChange(e)} margin='dense' placeholder='enter your first name' label='first name' variant="outlined" fullWidth />
                             <TextField id='lastname' value={lastname} onChange={e => onChange(e)} margin='dense' placeholder='enter your last name...' label='last name' fullWidth />
                             <TextField id='email' value={email} onChange={e => onChange(e)} margin='dense' placeholder='enter email...' label='email' fullWidth />
-                            <TextField id='phone' value={phone} onChange={e => onChange(e)} margin='dense' placeholder='enter phone' label='phone' fullWidth />
-                            {/* <Formfinal data={data} onChange={onChange}/> */}
+                            <TextField id='phone' value={phone} onChange={e => onChange(e)} margin='dense' placeholder='enter phone' label='phone' fullWidth /> */}
+                            <Formfinal data={data} onChange={onChange}/>
                         </form>
                         
                     </DialogContentText>

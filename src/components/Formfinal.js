@@ -20,79 +20,77 @@ const Formfinal = ({data, onChange}) => {
                  {({handleSubmit})=>(
                      <form onSubmit={handleSubmit}>
                          
-                         <Field name='first' 
+                         <Field name='firstname' 
                          placeholder='enter your first name'
-                         value={firstName} onChange={e => onChange(e)}
+                          onChange={e => onChange(e)}
                          validate={required}
                          subscription={{
                             value : true,
-                            active : true,
                             error : true,
+                            active: true,
                             touched: true
-                        }}
+                         }}
                          >
-                             {({input, meta, placeholder})=> (
+                             {({ meta, placeholder,  onChange})=> (
                                  <div>
-                                     <TextField  {...input} id="name"  margin='dense' placeholder={placeholder} label='first name' variant="outlined" fullWidth/>
+                                     <TextField value={firstName} id="firstName" onChange={onChange}  margin='dense' placeholder={placeholder} label='first name' variant="outlined" fullWidth/>
                                      {meta.touched && meta.error && <span style={{color : 'red', textAlign: 'right'}}> {meta.error} </span>}
                                  </div>
                              )}
                          </Field>
-                         <Field name='last name'
-                         value={lastname} 
+                         <Field name='lastname'
+                        
                          onChange={e => onChange(e)}
                          validate={required}
                           subscription={{
                             value : true,
-                            active : true,
                             error : true,
                             touched: true
                         }}
                          >
-                             {({input, meta})=> (
+                             {({ meta, onChange})=> (
                                  <div>
-                                     <TextField  {...input} id="last name"   margin='dense' placeholder='last name' label='last name' variant="outlined" fullWidth/>
+                                     <TextField   value={lastname}   id="lastname" onChange={onChange}   margin='dense' placeholder='last name' label='last name' variant="outlined" fullWidth/>
                                      {meta.touched && meta.error && <span style={{color : 'red'}}> {meta.error} </span>}
                                  </div>
                              )}
                          </Field>
                          <Field name='email'
-                         value={email} 
+                         
                          onChange={e => onChange(e)}
                          validate={required}
                          subscription={{
                             value : true,
-                            active : true,
                             error : true,
                             touched: true
                         }}
                          >
-                             {({input, meta})=> (
+                             {({ meta, onChange })=> (
                                  <div>
-                                     <TextField  {...input} id="email"  margin='dense'   placeholder='email....' label='email' variant="outlined" fullWidth/>
+                                     <TextField   value={email} onChange={onChange} id='email'  margin='dense'   placeholder='email....' label='email' variant="outlined" fullWidth/>
                                      {meta.touched && meta.error && <span style={{color : 'red'}}> {meta.error} </span>}
                                  </div>
                              )}
                          </Field>
                         
                          <Field  name='phone'
-                         value={phone} 
+                       
                          onChange={e => onChange(e)}
                          validate={required}
                           subscription={{
                             value : true,
-                            active : true,
                             error : true,
                             touched: true
                         }}
                          >
-                             {({input, meta})=> (
+                             {({ meta, onChange})=> (
                                  <div>
-                                     <TextField  {...input} id="phone"   margin='dense' placeholder='phone +1...' label='phone' variant="outlined" fullWidth/>
+                                     <TextField   value={phone} id='phone' onChange={onChange}   margin='dense' placeholder='phone +1...' label='phone' variant="outlined" fullWidth/>
                                      {meta.touched && meta.error && <span style={{color : 'red'}}> {meta.error} </span>}
                                  </div>
                              )}
                          </Field>
+                    
                      
                      </form>
                      

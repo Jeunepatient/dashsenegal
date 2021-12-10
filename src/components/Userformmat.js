@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
@@ -154,8 +154,12 @@ const Userformmat = () => {
             <DataGrid
                 rows={datarow}
                 columns={columns}
+                disableColumnReorder={false}
                 pageSize={10}
                 rowsPerPageOptions={[5]}
+                components={{
+                    Toolbar: GridToolbar,
+                  }}
                 checkboxSelection
                 disableSelectionOnClick
             />
