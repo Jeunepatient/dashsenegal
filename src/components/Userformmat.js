@@ -11,6 +11,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import Dialogmodal from './Dialogmodal';
+import user from './table.module.css'
 const Userformmat = () => {
     const columns = [
         { field: 'id', headerName: 'ID', width: 90 },
@@ -48,7 +49,7 @@ const Userformmat = () => {
                     {/* <IconButton aria-label="delete" color='error' size="large">
                         <DeleteIcon fontSize="inherit" />
                     </IconButton> */}
-                    <Button variant="outlined" color='secondary' onClick={() => handleDelete(params.id)} startIcon={<DeleteIcon />} >Delete</Button>
+                    <Button variant="outlined" color='error' onClick={() => handleDelete(params.id)} startIcon={<DeleteIcon />} >Delete</Button>
                 </Box>
                 {/* <Button variant='outlined' color='primary'>edit</Button> */}
 
@@ -149,7 +150,7 @@ const Userformmat = () => {
 
 
     return (
-        <div style={{ height: 400 }}>
+        <div className={user.userform}>
             <DataGrid
                 rows={datarow}
                 columns={columns}

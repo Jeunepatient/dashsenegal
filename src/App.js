@@ -10,6 +10,7 @@ import Authentification from "./components/Authentification";
 import Circleauth from "./components/Circleauth";
 import Usersform from "./components/Usersform";
 import Userformmat from "./components/Userformmat";
+import Formfinal from "./components/Formfinal";
 
 
 const App = () => {
@@ -20,12 +21,13 @@ const App = () => {
         <LeftContextProvider>
           {/* <Usersform /> */}
           {/* <Circleauth /> */}
-          <Userformmat />
+          {/* <Userformmat /> */}
+          {/* <Formfinal /> */}
            {/* <Authentification /> */}
-           {/* <Leftside /> */}
+           <Leftside />
             <Switch>
               {/* <Route path='/left' component ={Leftside} /> */}
-              <Route path='/h' exact component={Homepage} />
+              <Route path='/' exact component={Homepage} />
               <Route path='/user' component={User} />
             </Switch>
         </LeftContextProvider>
