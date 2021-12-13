@@ -1,6 +1,7 @@
 .container {
     display: flex;
-    column-gap: 10px;
+    column-gap: 18px;
+    align-items: center;
 }
 .container i {
     font-size: 28px;

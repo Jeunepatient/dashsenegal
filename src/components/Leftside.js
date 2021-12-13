@@ -5,7 +5,10 @@ import Subset from './Subset';
 import { useContext } from 'react';
 import { Leftcontext } from '../Context/Leftcontext';
 import { AuthContext } from '../Context/AuthContext';
-import logo from '../img/cmelogo.png'
+import logo from '../img/cmlogo.png'
+import Avataruser from './Avataruser';
+import { Box } from '@mui/material';
+
 
 
 const Leftside = () => {
@@ -20,16 +23,20 @@ const Leftside = () => {
     return ( 
         <div style={{backgroundColor :theme.bg, color : theme.color , borderColor : theme.ui}} className={leftside.leftside}>
             <div  style={{backgroundColor :theme.bg, color : theme.color }} className={leftside.container}>
-                <img src={logo} alt='' width='100%' height='80px'/>
-                <div style={{fontFamily: 'magmawave caps'}} className={leftside.logomakeup}>
+                <Box sx={{textAlign: 'center'}}>
+                     <img src={logo} alt='' />
+                </Box>
+               
+                {/* <div style={{fontFamily: 'magmawave caps'}} className={leftside.logomakeup}>
                     cma cgm
-                </div>
+                </div> */}
                 {/**the status information */}
                <div className={leftside.top}>
                 <div  style={{backgroundColor :theme.ui, color : theme.color }} className={leftside.logocon}>
                         <div className={leftside.user}>
                             {/* <i className='fa fa-user-circle'></i> */}
-                            <div className={leftside.img}></div>
+                            {/* <div className={leftside.img}></div> */}
+                            <Avataruser />
                         </div>
                         
                             {auth.map(admeach => {

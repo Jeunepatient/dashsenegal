@@ -1,4 +1,5 @@
 import Topright from "./Topright";
+import * as React from 'react';
 import home from './homepage.module.css'
 import Mainhomepage from "./Mainhomepage";
 import { GoogleMap, InfoWindow } from "react-google-maps";
@@ -12,7 +13,12 @@ import Mapcomponent from "./Mapcomponent";
 import withScriptjs from "react-google-maps/lib/withScriptjs";
 import withGoogleMap from "react-google-maps/lib/withGoogleMap";
 import { Marker } from "google-maps-react";
-
+import Reactappchart from "./Reactappchart";
+import Chartuser from "./Chartuser";
+import Chartscatter from "./Chartscatter";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid'
+import Scrolltop from "./Scrolltop";
 
 // import Piechart from "./Piechart";
 const Homepage = () => {
@@ -40,15 +46,32 @@ const Homepage = () => {
         <div  className={home.home}>
             <div style={{backgroundColor :theme.bg, color : theme.color }} className={home.container}>
                 {/**the right top of the homepage */}
-                <Topright />
+                <Scrolltop />
+                {/* <Topright /> */}
                 <Mainhomepage />
                 <div className={home.chart}>
 
                     {/* <Linechart /> */}
-                    <Lineargradient />
+                    {/* <Lineargradient /> */}
+                    <Reactappchart />
                     <Piechart />
                    
                 </div>
+                <Box  sx={{ width: '90%', margin : '0 auto', padding : '50px 0' }}>
+                    <Grid container spacing={6}  rowSpacing={2}>
+                        <Grid item xl={8}>
+                            <Chartuser />
+                        </Grid>
+                        <Grid item xl={4}> 
+                             <Chartscatter />
+                        </Grid>
+                    </Grid>
+                    
+                   
+
+                </Box>
+                
+
                 {/* <Iframemaps /> */}
                 {/* <Mapcomponent /> */}
                 {/* <div style={{}} className={home.map}>

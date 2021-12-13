@@ -34,8 +34,8 @@ const outputsubparm = ()=> {
 // post some articles
 const [article, setarticle] = useState([
     {id: 1, num : '99', name :'navire', color : '#7fffd4', ink : '#008000'},
-    {id: 2, num : '1000', name :'articles', color :'#00bfff', ink : '#3311a1'},
-    {id: 3, num : '19', name :'shipment', color :"#ffe4c4", ink : '#daa520'}
+    {id: 2, num : '1000', name :'articles', color :'rgb(208, 242, 255)', ink : 'rgb(4, 41, 122)'},
+    {id: 3, num : '19', name :'shipment', color :"rgb(255, 247, 205)", ink : '#daa520'}
 ])
 
 // all the links

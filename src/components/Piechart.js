@@ -17,15 +17,11 @@ const Piechart = () => {
                 data : [3, 2 , 2],
                 backgroundColor: [
                     '#7fffd4',
-                    '#00bfff',
-                    '#ffe4c4',
+                    'rgb(208, 242, 255)',
+                    'rgb(255, 247, 205)',
                     
                   ],
-                  borderColor: [
-                    '#7fffd4',
-                    '#00bfff',
-                    '#ffe4c4',
-                  ]
+                 
             },
             
         ]

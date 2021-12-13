@@ -11,6 +11,7 @@ import Circleauth from "./components/Circleauth";
 import Usersform from "./components/Usersform";
 import Userformmat from "./components/Userformmat";
 import Formfinal from "./components/Formfinal";
+import ThemeConfig from "./ThemeConfig";
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <div className='app'>
        <AuthContextProvider>
         <LeftContextProvider>
+          <ThemeConfig>
           {/* <Usersform /> */}
           {/* <Circleauth /> */}
           {/* <Userformmat /> */}
@@ -30,6 +32,7 @@ const App = () => {
               <Route path='/' exact component={Homepage} />
               <Route path='/user' component={User} />
             </Switch>
+            </ThemeConfig>
         </LeftContextProvider>
         </AuthContextProvider>
       </div>
