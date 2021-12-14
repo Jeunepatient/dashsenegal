@@ -6,7 +6,8 @@ import Homepage from "./components/Homepage";
 import './App.css'
 import AuthContextProvider from "./Context/AuthContext";
 import User from "./components/User";
-import Authentification from "./components/Authentification";
+import Authentification from "./authentification/Authentification";
+// import Authentification from "./components/Authentification";
 import Circleauth from "./components/Circleauth";
 import Usersform from "./components/Usersform";
 import Userformmat from "./components/Userformmat";
@@ -26,10 +27,11 @@ const App = () => {
           {/* <Userformmat /> */}
           {/* <Formfinal /> */}
            {/* <Authentification /> */}
-           <Leftside />
+           <Authentification />
+           {/* <Leftside /> */}
             <Switch>
               {/* <Route path='/left' component ={Leftside} /> */}
-              <Route path='/' exact component={Homepage} />
+              <Route path='/h' exact component={Homepage} />
               <Route path='/user' component={User} />
             </Switch>
             </ThemeConfig>
