@@ -3,10 +3,14 @@ import {Form ,Field, FormSpy } from "react-final-form";
 import classe from './authentification.module.css'
 
 const Alcantaform = () => {
-    const onSubmit =e => {
+    const onSubmit =(e, values) => {
         e.preventDefault()
         e.username=""
         e.password=''
+        if (values.username !== "Ibrahima") {
+            return { username: "Unknown username" };
+          }
+        console.log('jeune patient')
     }
     // const validate= e => {
     //    const errors = {}
@@ -33,7 +37,7 @@ const Alcantaform = () => {
             subscription={{
                submitting : true
             }}>
-                {({handleSubmit, submitting, values})=> (
+                {({handleSubmit, submitting, values, submitError})=> (
                     <form onSubmit={handleSubmit}>
                         <div>
                            
@@ -50,12 +54,15 @@ const Alcantaform = () => {
                                 <div className={classe.inputspot}>
                                     <i className='fa fa-user-circle'></i>
                                     <input type='text' {...input} placeholder='username' />
-                                    {meta.touched && meta.error && <span style={{color : 'red'}}>{meta.error}</span>}
+                                    {meta.touched && (meta.error|| meta.submitError) && <span style={{color : 'red'}}>{meta.error || meta.submitError}</span>}
                                 </div>
                             )} />
                                 {/* {fieldState => (<pre>{JSON.stringify(fieldState, undefined, 2)}</pre>)} */}
                             
                         </div>
+                        <Field name="username">
+                        {fieldState => (<pre>{JSON.stringify(fieldState, undefined, 2)}</pre>)}
+                        </Field>
                         <div>
                             <label>Password</label>
                             <div>

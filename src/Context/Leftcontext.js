@@ -40,7 +40,7 @@ const [article, setarticle] = useState([
 
 // all the links
 const [link, setlink] = useState([
-    {id:1, hash : 'Home', font : 'fa fa-home',href:''},
+    {id:1, hash : 'Home', font : 'fa fa-home',href:'home'},
     {id:2, hash : 'Situation portière', font : 'fa fa-shopping-cart', href:'situation'},
     {id:3, hash : 'Cumul', font : 'fa fa-file-o', href:'accrued'},
     {id:4, hash : 'Suivis des marchandises', font :'fa fa-map-marker ', href:'invigilate'},
@@ -50,8 +50,8 @@ const [link, setlink] = useState([
 const [sublink, setsublink]=useState([
     {id : 1, link: 'User', hash: 'user'},
     {id : 2, link: 'Ports', hash: 'port'},
-    {id : 3, link: 'Pays', hash: 'harbour'},
-    {id : 4, link: 'Villes', hash: 'down'},
+    {id : 3, link: 'Pays', hash: 'country'},
+    {id : 4, link: 'Villes', hash: 'town'},
     {id : 5, link: 'Bureau', hash: 'office'},
 ])
 

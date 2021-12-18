@@ -15,7 +15,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Divider from '@mui/material/Divider';
-
+import { Link, withRouter } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
@@ -28,8 +28,11 @@ import { useContext } from 'react';
 import Avataruser from './Avataruser';
 import Darktoggle from './Darktoggle';
 import { makeStyles } from '@material-ui/core'
-
+import { useHistory } from "react-router-dom/";
 import Darkmode from './Darkmode';
+import { AuthContext } from '../authentification/AuthContext';
+import { UserContext } from './User/UserContext';
+import { Stack } from '@mui/material';
 const useStyles = makeStyles({
   toolbar: {
     boxShadow: ' 5px 9px 21px 0 rgb(46, 61, 73,  20%)'
@@ -92,6 +95,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Restopright() {
+  const {datarow} = useContext(UserContext)
+  const {login, dispatch} = useContext(AuthContext)
+  const gotologin = useHistory()
   const [anchorEl, setAnchorEl] = React.useState();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState(null);
@@ -117,6 +123,10 @@ export default function Restopright() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+  const handleredirect = ()=> {
+    dispatch({type : 'SIGN_IN'})
+    gotologin.push('/')
+}
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -187,7 +197,13 @@ export default function Restopright() {
 
 
     <MenuItem>
-      <Avataruser /> Ibrahima Diallo
+    <Stack direction="row" spacing={2}>
+    <Avataruser />
+    {datarow.map(user => {
+      return user.isloggedin && (<Typography> {`${user.firstName} ${user.lastname}`} </Typography>)
+    })}
+    </Stack>
+      
     </MenuItem>
   
     <Divider />
@@ -195,15 +211,15 @@ export default function Restopright() {
       <ListItemIcon>
         <PersonAdd fontSize="small" />
       </ListItemIcon>
-      Add another account
+    <Link to='/user'>  Add another account</Link>
     </MenuItem>
     <MenuItem>
       <ListItemIcon>
         <Settings fontSize="small" />
       </ListItemIcon>
-      Settings
+      <Link to='/user'>Settings</Link>
     </MenuItem>
-    <MenuItem>
+    <MenuItem onClick={handleredirect}>
       <ListItemIcon>
         <Logout fontSize="small" />
       </ListItemIcon>
@@ -262,7 +278,7 @@ export default function Restopright() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box  sx={{ flexGrow: 1 , position: 'fixed', top : '0', right : '0',left: '17%', zIndex : "10"}}>
       <AppBar position="static" className={classes.toolbar} sx={{ backgroundColor: theme.chart, color: theme.color }}>
         <Toolbar>
           <IconButton

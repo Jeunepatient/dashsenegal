@@ -6,8 +6,10 @@ import { useContext } from 'react';
 import { Leftcontext } from '../Context/Leftcontext';
 import { AuthContext } from '../Context/AuthContext';
 import logo from '../img/cmlogo.png'
+import CMALOGO from '../img/LOGO.svg'
 import Avataruser from './Avataruser';
 import { Box } from '@mui/material';
+import { UserContext } from './User/UserContext';
 
 
 
@@ -15,7 +17,9 @@ const Leftside = () => {
     
     const {showsubparm, outputsubparm, islight, light, dark, link, setlink} = useContext(Leftcontext)
     const {auth} = useContext(AuthContext)
+    const {datarow} = useContext(UserContext)
     const theme = islight ? light : dark
+   
     /*****add on property actif*/
     const setactif = id => {
         setlink(link.map(link => link.id == id ? {...link, actif : true} : {...link, actif : false}))
@@ -24,7 +28,7 @@ const Leftside = () => {
         <div style={{backgroundColor :theme.bg, color : theme.color , borderColor : theme.ui}} className={leftside.leftside}>
             <div  style={{backgroundColor :theme.bg, color : theme.color }} className={leftside.container}>
                 <Box sx={{textAlign: 'center'}}>
-                     <img src={logo} alt='' />
+                     <img src={CMALOGO} width='90px' height = '90' alt='' />
                 </Box>
                
                 {/* <div style={{fontFamily: 'magmawave caps'}} className={leftside.logomakeup}>
@@ -39,14 +43,19 @@ const Leftside = () => {
                             <Avataruser />
                         </div>
                         
-                            {auth.map(admeach => {
-                                return(
-                                    <div className={leftside.personel}>
-                                         <div style={{fontFamily:'Questrial', fontSize:'20px', fontWeight : '500'}}>{admeach.firstname}</div>
-                                         <div style={{color : '#ababab'}}>{admeach.status}</div>
-                                    </div>
+                            
+                            {
+                            datarow.map(user => {
+                                return (
+                                    user.isloggedin && (
+                                        <div className={leftside.personel}>
+                                            <div style={user.firstName.length + user.lastname.length <= 18 ? { fontFamily: 'Questrial', fontSize: '20px', fontWeight: '500' } : { fontFamily: 'Questrial', fontSize: '16px', fontWeight: '500' }}>{`${user.firstName} ${user.lastname}` }</div>
+                                            <div style={{ color: '#ababab' }}>Admin</div>
+                                        </div>
+                                    )
                                 )
-                            })}
+                            })
+                        }
                            
                         </div>
                  

@@ -172,5 +172,198 @@
       "": "Chris",
       "id": 30
     }
+  ],
+  "user": [
+    {
+      "firstName": "Ibrahima",
+      "lastname": "Diallo",
+      "username": "Ibrahima24@",
+      "password": "jeune",
+      "cma_agency_id": "15",
+      "isloggedin": false,
+      "": "15",
+      "id": 3
+    },
+    {
+      "firstName": "Mamadou moussa",
+      "lastname": "Bangoura",
+      "username": "mamadou225j@",
+      "password": "mamadou",
+      "cma_agency_id": "15",
+      "isloggedin": false,
+      "": "15",
+      "id": 4
+    },
+    {
+      "firstName": "Ousmane",
+      "lastname": "Dia",
+      "username": "ousmane@25",
+      "password": "jeune",
+      "cma_agency_id": "",
+      "isloggedin": false,
+      "": "ousmane@25",
+      "id": 5
+    },
+    {
+      "firstName": "Adama hawa",
+      "lastname": "sall",
+      "username": "sall@15",
+      "password": "sall",
+      "cma_agency_id": "25",
+      "isloggedin": false,
+      "": "25",
+      "id": 6
+    }
+  ],
+  "harbor": [
+    {
+      "id": 1,
+      "name": "senegal harbor",
+      "geopoint_id": "Dakar",
+      "code": "senegal0245",
+      "ville_id": "senegal Dakar",
+      "undefined": "Dakar",
+      "isloggedin": false
+    },
+    {
+      "name": "Abuja",
+      "geopoint_id": "Dakar",
+      "code": "Abuja24",
+      "ville_id": "Ghana Accra",
+      "": "Abuja24",
+      "isloggedin": false,
+      "undefined": "Ghana Accra",
+      "id": 2
+    },
+    {
+      "name": "Tema",
+      "geopoint_id": "tmea201",
+      "code": "tema254@",
+      "ville_id": "Togo Lomé",
+      "": "tema254@",
+      "isloggedin": false,
+      "undefined": "Togo Lomé",
+      "id": 3
+    },
+    {
+      "name": "lome",
+      "geopoint_id": "Lome",
+      "code": "lome245",
+      "ville_id": "GHA",
+      "": "lome245",
+      "isloggedin": false,
+      "undefined": "GHA",
+      "id": 4
+    }
+  ],
+  "town": [
+    {
+      "id": 1,
+      "name": "Abuja",
+      "country_id": "GUI",
+      "code": "Abuja24",
+      "undefined": "GUI"
+    },
+    {
+      "name": "Abijan",
+      "country_id": "COT",
+      "code": "abijan02",
+      "": "abijan02",
+      "isloggedin": false,
+      "undefined": "COT",
+      "id": 2
+    },
+    {
+      "name": "Tema",
+      "country_id": "GHA",
+      "code": "ghana01",
+      "": "ghana01",
+      "isloggedin": false,
+      "undefined": "GHA",
+      "id": 3
+    },
+    {
+      "name": "Dakar",
+      "country_id": "GUI",
+      "code": "guin002",
+      "": "guin002",
+      "undefined": "GUI",
+      "id": 4
+    },
+    {
+      "name": "Conakry",
+      "country_id": "GHA",
+      "code": "ghana021",
+      "": "ghana021",
+      "undefined": "GHA",
+      "id": 5
+    },
+    {
+      "name": "yamossokro",
+      "country_id": "COT",
+      "code": "abouja0254",
+      "": "abouja0254",
+      "undefined": "COT",
+      "id": 6
+    },
+    {
+      "name": "Lomé",
+      "country_id": "TOG",
+      "code": "lom3544@",
+      "": "lom3544@",
+      "undefined": "TOG",
+      "id": 7
+    },
+    {
+      "name": "Abuja",
+      "country_id": 3,
+      "code": "abouja028",
+      "": "abouja028",
+      "undefined": 3,
+      "id": 8
+    }
+  ],
+  "office": [
+    {
+      "id": 1,
+      "number": "28",
+      "name": "marketing"
+    },
+    {
+      "name": "human ressource",
+      "number": "105",
+      "id": 2
+    }
+  ],
+  "country": [
+    {
+      "id": 1,
+      "name": "Guinea",
+      "code": "guin021",
+      "zone_id": "012"
+    },
+    {
+      "name": "juene",
+      "code": " 025",
+      "zone_id": 2,
+      "": "juene",
+      "undefined": 2,
+      "id": 2
+    },
+    {
+      "name": "Nigeria",
+      "code": "024Nigeria",
+      "zone_id": 3,
+      "undefined": 3,
+      "": "024Nigeria",
+      "id": 3
+    },
+    {
+      "name": "",
+      "code": "",
+      "zone_id": "east",
+      "undefined": "east",
+      "id": 4
+    }
   ]
 }

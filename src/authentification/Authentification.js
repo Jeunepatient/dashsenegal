@@ -16,12 +16,14 @@ import Switch from '@mui/material/Switch';
 import SaveIcon from '@mui/icons-material/Save';
 import SendIcon from '@mui/icons-material/Send';
 import logo from '../img/cmliogo.png'
+import LOGO from '../img/LOGO.svg'
 import AuthContext from './AuthContext';
-import LoadingButton from '@mui/lab/LoadingButton';
+// import LoadingButton from '@mui/lab/LoadingButton';
 import { makeStyles } from '@material-ui/core';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import Authlogin from './Authlogin';
 const useStyles = makeStyles({
     btn: {
         backgroundColor : '#112769',
@@ -71,26 +73,21 @@ export default function Authentification() {
                               login
                           </Typography>
                           <Box sx={{textAlign : 'center', mt : 4, mb : 4}}>
-                                 <img src={logo} height="102" alt='' />
+                                 <img src={LOGO} height="120" alt='' />
                           </Box>
                          
                           
                             <Box>
-                                <AuthContext />
-                              <Stack direction="row" spacing={2} sx={{mt : 1.5}}>
-                              <FormGroup>
-                                  <FormControlLabel control={<Checkbox defaultChecked color='secondary'  />} label="remember me" />
-                              </FormGroup>
-                              <Typography component="a" sx={{textAlign : 'right'}} color = 'secondary'>forget my password</Typography>  
-                              </Stack >
+                                <Authlogin />
+                              
                               
                                 
-                                <Button disabled></Button>
+                               
                             </Box>
                       </CardContent>
                       <CardActions className={classe.action} >
                    
-                           <LoadingButton className={classe.btn}
+                           {/* <LoadingButton className={classe.btn}
                               onClick={handleClick}
                               endIcon={<Login />}
                               loading={loading}
@@ -102,7 +99,7 @@ export default function Authentification() {
                           >
                             sign in
                               
-                          </LoadingButton>
+                          </LoadingButton> */}
                           
                          
                       </CardActions>
