@@ -1,4 +1,4 @@
-import { Input, TextField } from "@mui/material";
+import { Alert, Input, TextField } from "@mui/material";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useState } from "react";
@@ -10,12 +10,13 @@ import {
 import MenuItem from '@mui/material/MenuItem';
 import {Form ,Field, FormSpy } from "react-final-form";
 import IconButton from '@material-ui/core/IconButton';
+import { UserContext } from "./UserContext";
 
 const Userform = ({data, onChange}) => {
    
 
     
-
+    const {datarow} = React.useContext(UserContext)
    
     const {  firstName, lastname, username, password, cma_agency_id} = data
     const onSubmit =e => {
@@ -24,6 +25,22 @@ const Userform = ({data, onChange}) => {
        
  
        
+    }
+    
+    const validate = () => {
+        const errors = {};
+        datarow.map(user => {
+            if(username === user.username){
+                errors.username = 'this username already exists !'
+            }
+        })
+       if(!username){
+           errors.username = "required"
+       }
+        if(password.length < 5){
+            errors.password = "the password is too short"
+        }
+        return errors
     }
   
   
@@ -38,10 +55,10 @@ const Userform = ({data, onChange}) => {
                
                  
             }}
-           
+            validate={validate}
            
             >
-                 {({handleSubmit})=>(
+                 {({handleSubmit, submitError})=>(
                      <form onSubmit={handleSubmit}  >
                          
                          <Field name='firstname' 
@@ -55,9 +72,9 @@ const Userform = ({data, onChange}) => {
                             touched: true
                          }}
                          >
-                             {({ meta, placeholder,  onChange})=> (
+                             {({ meta, placeholder,  onChange, })=> (
                                  <>
-                                     <TextField value={firstName} id="firstName" onChange={onChange}  margin='dense' placeholder={placeholder} label='first name' variant="outlined" fullWidth/>
+                                     <TextField  value={firstName} id="firstName" onChange={onChange}  margin='dense' placeholder={placeholder} label='first name' variant="outlined" fullWidth/>
                                      {meta.touched && meta.error && <span style={{color : 'red', textAlign: 'right'}}> {meta.error} </span>}
                                  </>
                              )}
@@ -82,17 +99,18 @@ const Userform = ({data, onChange}) => {
                          <Field name='username'
                          
                          onChange={e => onChange(e)}
-                         validate={required}
+                       
                          subscription={{
                             value : true,
                             error : true,
                             touched: true
                         }}
                          >
-                             {({ meta, onChange })=> (
+                             {({ meta, onChange, input, rest , name})=> (
                                  <>
-                                     <TextField   value={username} onChange={onChange} id='username'  margin='dense'   placeholder='username....' label='username' variant="outlined" fullWidth/>
-                                     {meta.touched && meta.error && <span style={{color : 'red'}}> {meta.error} </span>}
+                                     <TextField name={name} {...input} required value={username} {...rest} onChange={onChange} id='username'  margin='dense'   placeholder='username....' label='username' variant="outlined" fullWidth/>
+                                     {(meta.error || meta.submitError) && meta.touched && <span style={{color : 'red', textAlign: 'right'}}> {meta.error || meta.submitError} </span>}
+                                     
                                  </>
                              )}
                          </Field>
@@ -100,19 +118,20 @@ const Userform = ({data, onChange}) => {
                          name="password"
                          onChange={e => onChange(e)}
                          
-                            validate={required}
+                           
                              subscription={{
                                value : true,
                                error : true,
                                touched: true,
                                active: true
                            }}
-                           type="select"
+                           
                          >
-                           {({meta, onChange})=> (
+                           {({meta, onChange, input, rest})=> (
                                <>
                               
                                 <TextField
+                                required
                                 type='password'
                                     id="password"
                                     name="password"
@@ -121,10 +140,11 @@ const Userform = ({data, onChange}) => {
                                     onChange={onChange}
                                     margin='dense'
                                     fullWidth
-                                    
-                                >
+                             
+                               />
                                   
-                                </TextField>
+                                
+                                {(meta.error || meta.submitError) && meta.touched && <span style={{color : 'red', textAlign: 'right'}}> {meta.error || meta.submitError} </span>}
                             </>
                            )}  
                          </Field>

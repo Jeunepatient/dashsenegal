@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 
 import { useState } from "react";
 import { useHistory } from "react-router-dom/";
@@ -9,8 +9,8 @@ import { AuthReducer } from "./AuthReducer";
 export const AuthContext = createContext()
 const AuthContextLoginProvider = (props) => {
     //getting user an identifying the right user
-    const {datarow,userStatus, setData} = useContext(UserContext)
-   
+    const {datarow,userStatus, setData, getDatarow} = useContext(UserContext)
+    const url = `http://localhost:4000/user`
     //handlevalidation to the next 
     const admin = { username: 'Ibrahima', password: 'Ibrahima28' }
     const initialcheckvalue = { username: '', password: '' }
@@ -24,7 +24,16 @@ const AuthContextLoginProvider = (props) => {
 
     }
     const totheHomepage = useHistory()
+
     const [login, dispatch] = useReducer(AuthReducer,false)
+
+
+    // const [login, setlogin] = useState({})
+    const urlsign = ` http://localhost:4000/signin`
+    
+    // const {issignedin} = login
+   
+    
     //handle error
     const [error, setError] = useState(false)
     const [erromessage, seterrormessage] = useState("")
@@ -43,12 +52,35 @@ const AuthContextLoginProvider = (props) => {
         else {
             setsadmin(initialcheckvalue)
             dispatch({type : 'SIGN_IN'})
+           const Signin = {issignedin : true}
+           
+           fetch(urlsign, {
+            method: "PUT", body: JSON.stringify(Signin), headers: {
+                'content-type': 'application/json'
+            }
+             })
+            .then(res => res.json())
+            .then(data => {
+                getsignin()
+               console.log(data)
+            })
            
             setError(false)
             
             totheHomepage.push('/home')
-            setData(datarow.map(user=> user.username == username && user.password === password ? {...user, isloggedin : true} : {...user, isloggedin : false}))
-           
+            // setData(datarow.map(user=> user.username == username && user.password === password ? {...user, isloggedin : true} : {...user, isloggedin : false}))
+            const newdata = user.username == username && user.password === password ? {...user, isloggedin : true} : {...user, isloggedin : false}
+             fetch(url + `/${user.id}`, {
+                method: "PUT", body: JSON.stringify(newdata), headers: {
+                    'content-type': 'application/json'
+                }
+            })
+                .then(res => res.json())
+                .then(data => {
+                   
+                    getDatarow()
+
+                })
            
         }
 
@@ -63,9 +95,39 @@ const AuthContextLoginProvider = (props) => {
         e.preventDefault()
         // setsadmin(initialcheckvalue)
     }
-    console.log(userStatus)
+
+
+    const [islogin, setLogin] = useState({})
+    const [load, setload] = useState(true)
+    const [Errorfetch, setErrorfetch] = useState(null)
+    useEffect(()=>{
+        getsignin()
+    }, [])
+
+
+ 
+      
+
+
+
+    const getsignin= () => {
+        fetch(urlsign)
+            .then(res =>{
+                return res.json()
+                })
+            .then(data => {
+               setLogin(data)
+               console.log(data)
+               setload(false)
+            })
+            .catch(err => {
+                setErrorfetch(err.message)
+            })
+    }
+
+
     return (
-        <AuthContext.Provider value={{ checkadmin, setsadmin, handleSubmitCheck, handleCheck, error, setError, erromessage,login , dispatch}}>
+        <AuthContext.Provider value={{ checkadmin, setsadmin, handleSubmitCheck, handleCheck, error, setError, erromessage,  login ,dispatch, islogin, urlsign ,getsignin}}>
             {props.children}
         </AuthContext.Provider>
     )

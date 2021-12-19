@@ -96,7 +96,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Restopright() {
   const {datarow} = useContext(UserContext)
-  const {login, dispatch} = useContext(AuthContext)
+  const {login, dispatch, islogin, urlsign , getsignin} = useContext(AuthContext)
+  const {issignedin} = islogin
+  console.log(issignedin)
+  // const {login, setlogin } = useContext(AuthContext)
   const gotologin = useHistory()
   const [anchorEl, setAnchorEl] = React.useState();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
@@ -125,6 +128,19 @@ export default function Restopright() {
   };
   const handleredirect = ()=> {
     dispatch({type : 'SIGN_IN'})
+    // setlogin(!login.login) 
+    const logout = {issignedin : false}
+    fetch(urlsign, {
+      method: "PUT", body: JSON.stringify(logout), headers: {
+          'content-type': 'application/json'
+      }
+       })
+      .then(res => res.json())
+      .then(data => {
+          getsignin()
+       
+      })
+
     gotologin.push('/')
 }
 
@@ -200,7 +216,7 @@ export default function Restopright() {
     <Stack direction="row" spacing={2}>
     <Avataruser />
     {datarow.map(user => {
-      return user.isloggedin && (<Typography> {`${user.firstName} ${user.lastname}`} </Typography>)
+      return user.isloggedin && (<Typography key={user.id}> {`${user.firstName} ${user.lastname}`} </Typography>)
     })}
     </Stack>
       

@@ -31,56 +31,58 @@ import Drawerside from "./Drawerside";
 const App = () => {
   const generateClassName = createGenerateClassName({
     productionPrefix: 'c',
-    disableGlobal : true
+    disableGlobal: true
   });
   return (
     <Router>
       <div className='app'>
-      
+
         <HarborContextProvider>
-        <UserContextProvider>
-       <AuthContextProvider>
-        <LeftContextProvider>
-         <AuthContextLoginProvider> 
-           <OfficeContextProvider>
-          <TownContextProvider>
-            <CountryContextProvider>
-         <StylesProvider generateClassName={generateClassName}>
-          <ThemeConfig>
-          {/* <Usersform /> */}
-          {/* <Circleauth /> */}
-          {/* <Userformmat /> */}
-          {/* <Formfinal /> */}
-           {/* <Authentification /> */}
-           {/* <Authentification /> */}
-           <Drawerside />
-           {/* {<Leftside /> } */}
-            <Switch>
-              
-              <Route  path='/' exact  component={Authentification} />
-              <PrivateRoute  path='/home' type="private" exact component={Homepage} />
-              
-              <PrivateRoute  path='/user' type="private"  component={User} />
-              <PrivateRoute  path='/port'  type="private" component={Harbor} />
-              <PrivateRoute  path='/town'  type="private" component={Town} />
-              <PrivateRoute  path='/office' type="private"  component={Office} />
-              <PrivateRoute  path='/country'  type="private" component={Country} />
-            </Switch>
-            </ThemeConfig>
-            </StylesProvider> 
-            </CountryContextProvider>
-            </TownContextProvider> 
-            </OfficeContextProvider>
-            </AuthContextLoginProvider> 
-        </LeftContextProvider>
-        </AuthContextProvider>
-        </UserContextProvider>
+          <UserContextProvider>
+            <AuthContextProvider>
+              <LeftContextProvider>
+
+                <OfficeContextProvider>
+                  <TownContextProvider>
+                    <CountryContextProvider>
+                      <AuthContextLoginProvider>
+                        <StylesProvider generateClassName={generateClassName}>
+                          <ThemeConfig>
+                            {/* <Usersform /> */}
+                            {/* <Circleauth /> */}
+                            {/* <Userformmat /> */}
+                            {/* <Formfinal /> */}
+                            {/* <Authentification /> */}
+                            {/* <Authentification /> */}
+                            <Drawerside />
+                            {/* {<Leftside /> } */}
+                            <Switch>
+
+                              <Route path='/' exact component={Authentification} />
+                              <PrivateRoute path='/home' type="private" exact component={Homepage} />
+
+                              <PrivateRoute path='/user' type="private" component={User} />
+                              <PrivateRoute path='/port' type="private" component={Harbor} />
+                              <PrivateRoute path='/town' type="private" component={Town} />
+                              <PrivateRoute path='/office' type="private" component={Office} />
+                              <PrivateRoute path='/country' type="private" component={Country} />
+                            </Switch>
+                          </ThemeConfig>
+                        </StylesProvider>
+                      </AuthContextLoginProvider>
+                    </CountryContextProvider>
+                  </TownContextProvider>
+                </OfficeContextProvider>
+
+              </LeftContextProvider>
+            </AuthContextProvider>
+          </UserContextProvider>
         </HarborContextProvider>
-       
+
       </div>
-    </Router> 
-    
-   );
+    </Router>
+
+  );
 }
- 
+
 export default App;

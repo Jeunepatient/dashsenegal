@@ -36,6 +36,7 @@ const UserContextProvider = (props) => {
      
      
         const { value, id, name } = e.target
+        
        
         setUser({ ...userStatus, [id]: value, [name]: value, isloggedin : false})
         // console.log(name, value)
@@ -101,7 +102,7 @@ const UserContextProvider = (props) => {
 
 
     return ( 
-        <UserContext.Provider value={{datarow, setData, handleSubmit,userStatus, setUser, onChange, handleUpdate, handleDelete, initialvalues, open, setOpen ,handleClose, handleClickOpen}}>
+        <UserContext.Provider value={{datarow, setData, handleSubmit,userStatus, setUser, onChange, handleUpdate, handleDelete,getDatarow ,initialvalues, open, setOpen ,handleClose, handleClickOpen}}>
             {props.children}
         </UserContext.Provider>
      );

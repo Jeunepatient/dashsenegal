@@ -34,7 +34,7 @@ export default function HarborModal({ open, handleClose, data, onChange, handleS
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle id="alert-dialog-title">
-                    {id ? 'update user' : 'create new user'}
+                    {id ? 'update Harbor' : 'create new Harbor'}
                 </DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">

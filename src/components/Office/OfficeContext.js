@@ -85,7 +85,7 @@ const OfficeContextProvider = (props) => {
 
                 })
         }
-        console.log(officeset)
+       
 
     }
    
@@ -104,7 +104,7 @@ const OfficeContextProvider = (props) => {
                 setdataOffice(data)
             })
     }
-    console.log(dataOffice)
+  
 
     return ( 
         <OfficeContext.Provider value={{dataOffice, setdataOffice, handleSubmit,officeset, setOffice, onChange, handleUpdate, handleDelete, initialvaluesoffice, open, setOpen ,handleClose, handleClickOpen}}>

@@ -180,7 +180,7 @@
       "username": "Ibrahima24@",
       "password": "jeune",
       "cma_agency_id": "15",
-      "isloggedin": false,
+      "isloggedin": true,
       "": "15",
       "id": 3
     },
@@ -195,16 +195,6 @@
       "id": 4
     },
     {
-      "firstName": "Ousmane",
-      "lastname": "Dia",
-      "username": "ousmane@25",
-      "password": "jeune",
-      "cma_agency_id": "",
-      "isloggedin": false,
-      "": "ousmane@25",
-      "id": 5
-    },
-    {
       "firstName": "Adama hawa",
       "lastname": "sall",
       "username": "sall@15",
@@ -213,6 +203,36 @@
       "isloggedin": false,
       "": "25",
       "id": 6
+    },
+    {
+      "firstName": "Adama hawa",
+      "lastname": "Baldé",
+      "username": "balde24@",
+      "password": "balde85",
+      "cma_agency_id": "24",
+      "isloggedin": false,
+      "": "balde24@",
+      "id": 7
+    },
+    {
+      "firstName": "Mouctar",
+      "lastname": "Diallo",
+      "username": "mouct25@",
+      "password": "mouct12",
+      "cma_agency_id": "54",
+      "isloggedin": false,
+      "": "54",
+      "id": 8
+    },
+    {
+      "firstName": "Chris",
+      "lastname": "diallo",
+      "username": "chirsdiallo",
+      "password": "chris25",
+      "cma_agency_id": "",
+      "isloggedin": false,
+      "": "chirsdiallo",
+      "id": 9
     }
   ],
   "harbor": [
@@ -254,6 +274,16 @@
       "isloggedin": false,
       "undefined": "GHA",
       "id": 4
+    },
+    {
+      "name": "Tema",
+      "geopoint_id": "Lome",
+      "code": "LOME254",
+      "ville_id": "GUI",
+      "": "LOME254",
+      "isloggedin": false,
+      "undefined": "GUI",
+      "id": 5
     }
   ],
   "town": [
@@ -321,6 +351,22 @@
       "": "abouja028",
       "undefined": 3,
       "id": 8
+    },
+    {
+      "name": "Bamako",
+      "country_id": 4,
+      "code": "mali025",
+      "": "mali025",
+      "undefined": 4,
+      "id": 9
+    },
+    {
+      "name": "labe",
+      "country_id": 1,
+      "code": "abouja02",
+      "": "labe",
+      "undefined": 1,
+      "id": 10
     }
   ],
   "office": [
@@ -359,11 +405,23 @@
       "id": 3
     },
     {
-      "name": "",
-      "code": "",
+      "name": "Mali",
+      "code": "024MALI",
       "zone_id": "east",
+      "": "024MALI",
       "undefined": "east",
       "id": 4
+    },
+    {
+      "name": "Cameroon",
+      "code": "cam24@",
+      "zone_id": "east",
+      "": "cam24@",
+      "undefined": "east",
+      "id": 5
     }
-  ]
+  ],
+  "signin": {
+    "issignedin": false
+  }
 }

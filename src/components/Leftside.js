@@ -48,7 +48,7 @@ const Leftside = () => {
                             datarow.map(user => {
                                 return (
                                     user.isloggedin && (
-                                        <div className={leftside.personel}>
+                                        <div key={user.id} className={leftside.personel}>
                                             <div style={user.firstName.length + user.lastname.length <= 18 ? { fontFamily: 'Questrial', fontSize: '20px', fontWeight: '500' } : { fontFamily: 'Questrial', fontSize: '16px', fontWeight: '500' }}>{`${user.firstName} ${user.lastname}` }</div>
                                             <div style={{ color: '#ababab' }}>Admin</div>
                                         </div>
